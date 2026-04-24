@@ -43,3 +43,21 @@ Measure before optimizing. Write clear code first, then profile to find actual b
 ## 9. Simplicity
 
 Prefer simple solutions over clever ones. Avoid premature abstraction. Delete dead code. The best code is often the code you didn't write.
+
+## 10. Consistency over Cleverness
+
+When adding new code to an existing area, **match what's already there**. If the rest of the file uses a particular pattern, style, or abstraction, use the same one. Your "better" way might genuinely be better, but it costs readers time to context-switch between styles. Propose a change across the whole codebase if you think something should be different — don't introduce a one-off exception.
+
+This is especially true for UI work: always follow the styling of the most recently deployed feature. See [Systems Development → UI Prototyping](workflow/systems-development.md#2-ui-prototyping).
+
+## 11. Clean as You Go
+
+Leave the codebase a little better than you found it. If you touch a function to fix a bug and notice an obvious improvement nearby — a confusing name, a dead import, a comment that's now wrong — fix it in the same PR. Don't let small issues accumulate.
+
+Counterpoint: don't turn a one-line bug fix into a 500-line refactor. Keep the cleanup proportional to the change.
+
+## 12. Ask Before Building Big Things
+
+For anything that takes more than a day or touches more than one part of the system, **talk it through with a teammate before you start**. A 15-minute conversation at the whiteboard stage saves hours of rework. The cost of talking is low; the cost of building the wrong thing is high.
+
+See [Systems Development → Design and Planning](workflow/systems-development.md#1-design-and-planning).

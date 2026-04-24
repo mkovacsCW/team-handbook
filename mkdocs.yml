@@ -95,7 +95,10 @@ nav:
       - Glossary: onboarding/glossary.md
   - Workflow:
       - workflow/index.md
+      - Systems Development: workflow/systems-development.md
       - Pull Requests: workflow/pull-requests.md
+      - Support Email Process: workflow/support-email.md
+      - CI/CD: workflow/ci-cd.md
   - General Principles: general-principles.md
   - Backend:
       - backend/index.md
@@ -110,11 +113,6 @@ nav:
       - Components: frontend/components.md
       - Hooks: frontend/hooks.md
       - API Files: frontend/api.md
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/your-org
 
 extra_css:
   - assets/extra.css

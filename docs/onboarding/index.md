@@ -18,6 +18,7 @@ Welcome to the team! This section is designed to get you productive quickly with
 - [Day One](day-one.md)
 - [General Principles](../general-principles.md)
 - [Pull Requests](../workflow/pull-requests.md)
+- [Systems Development](../workflow/systems-development.md) — how a feature goes from idea to production
 
 **Day 3–5 (skim these, bookmark for reference):**
 
