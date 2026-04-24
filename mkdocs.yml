@@ -6,6 +6,8 @@ site_url: https://docs.example.com/
 
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/logo.png
   features:
     - navigation.tabs          # top-level sections as tabs
     - navigation.sections      # group items in the sidebar
@@ -20,6 +22,14 @@ theme:
     - content.tabs.link        # syncs tabs across the page
     - toc.follow               # right-side TOC scrolls with you
   palette:
+    # Dark mode (default — dark navy)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -28,14 +38,6 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-    # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
   font:
     text: Inter
     code: JetBrains Mono
@@ -109,3 +111,6 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/your-org
+
+extra_css:
+  - assets/extra.css

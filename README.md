@@ -1,197 +1,76 @@
-# Engineering Handbook
+# Dark Navy Theme Update
 
-Team documentation built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/), deployed on GitHub Pages.
+Drop these files into your existing `engineering-handbook` repo to switch to a dark navy theme with your company logo.
 
-## 🚀 First time setup?
+## What's in here
 
-**Read [SETUP.md](./SETUP.md) first.** It's a ~10 minute walkthrough from zip → live site.
+```
+theme-update/
+├── mkdocs.yml                   → replaces your existing mkdocs.yml
+└── docs/
+    └── assets/
+        └── extra.css            → new file, custom CSS for navy colors
+```
 
-Once you're deployed, come back here for day-to-day usage.
+## How to apply
 
----
+### 1. Add your logo
 
-## Quick start (for editing)
+Drop your company logo into `docs/assets/logo.png`. A PNG with a transparent background works best. SVG also works — if you use SVG, change the filename in `mkdocs.yml` accordingly.
+
+**Recommended dimensions:** Any height works, but the header is about 40px tall, so the logo will be rendered around 24-30px tall. Start with something like 200×60 or 300×90.
+
+**Two ways to add it:**
+
+- Drag your logo file into `docs/assets/` (rename it to `logo.png`)
+- Or commit it via git: `git add docs/assets/logo.png`
+
+### 2. Replace mkdocs.yml
+
+Copy `mkdocs.yml` from this folder over your existing one. The changes are:
+
+- Added `logo: assets/logo.png` and `favicon: assets/logo.png` under `theme:`
+- Reordered the palette so **dark mode is the default** (the first entry is dark navy)
+- Added `extra_css:` section pointing to the new CSS file
+
+### 3. Add the CSS file
+
+Copy `docs/assets/extra.css` into your repo at the same path. This file overrides Material's default "slate" (charcoal gray) with actual dark navy blue colors.
+
+### 4. Commit and push
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+git add docs/assets/logo.png docs/assets/extra.css mkdocs.yml
+git commit -m "Switch to dark navy theme with company logo"
+git push
+```
 
-# Run the local dev server
+GitHub Actions auto-deploys. Live in ~1 minute.
+
+## Preview locally first
+
+```bash
 mkdocs serve
 ```
 
-Open http://127.0.0.1:8000 — hot reloads as you edit.
+Open http://127.0.0.1:8000 to see it before pushing.
 
-## How deployment works
+## Customization
 
-1. Someone pushes to `main` (usually via PR).
-2. GitHub Actions workflow (`.github/workflows/deploy.yml`) runs:
-    - Installs Python dependencies
-    - Builds the site with `mkdocs build --strict`
-    - Uploads the built site to GitHub Pages
-3. Live site updates in ~1 minute.
+If you want to tweak the exact shade of navy, edit `docs/assets/extra.css`. The key values are:
 
-No manual deploy step. No local `mkdocs gh-deploy`. Just push and it's live.
-
-## Repo structure
-
-```
-.
-├── .github/workflows/
-│   └── deploy.yml          # Auto-deploy to GitHub Pages
-├── docs/
-│   ├── index.md            # home page
-│   ├── onboarding/         # new hire guide
-│   ├── workflow/           # PRs, code review
-│   ├── backend/            # Django patterns
-│   ├── frontend/           # React patterns
-│   └── general-principles.md
-├── mkdocs.yml              # site config + sidebar nav
-├── requirements.txt        # Python dependencies
-├── README.md               # you are here
-└── SETUP.md                # first-time setup guide
+```css
+--md-default-bg-color: hsl(220, 40%, 10%);    /* main background - darker = lower % */
+--md-primary-fg-color: hsl(220, 45%, 15%);    /* header color */
+--md-accent-fg-color: hsl(210, 90%, 65%);     /* links and highlights */
 ```
 
-**To add a page:** drop a `.md` file in the appropriate folder, add it to the `nav:` section of `mkdocs.yml`, commit, push.
+HSL format is `hsl(hue, saturation, lightness)`. For navy, keep hue around 210-225. To go darker, lower the lightness %. To go more blue-saturated, raise the saturation %.
 
-**To reorganize the sidebar:** edit the `nav:` section of `mkdocs.yml`. Order in the file = order on the site.
+### Want it always dark (no light mode toggle)?
 
----
+Remove the second `media:` block under `palette:` in `mkdocs.yml` and remove the `toggle:` section from the first one. The sun/moon icon in the header will disappear.
 
-## Writing tips
+### Want to change the light mode colors too?
 
-### Callouts (admonitions)
-
-Use these to highlight important info:
-
-```markdown
-!!! warning "Always commit migrations"
-    Don't leave generated migrations uncommitted in your PR.
-
-!!! tip
-    Use `select_related` to avoid N+1 queries.
-
-!!! note
-    This is informational.
-
-!!! danger
-    Never commit secrets.
-```
-
-Available types: `note`, `tip`, `warning`, `danger`, `info`, `example`, `quote`, `abstract`, `success`, `question`, `failure`, `bug`.
-
-Collapsible variant (starts collapsed):
-
-```markdown
-??? note "Click to expand"
-    Hidden content.
-```
-
-### Code blocks with titles and highlights
-
-````markdown
-```python title="models.py" hl_lines="2 3"
-class Article(models.Model):
-    title = models.CharField(max_length=255)   # highlighted
-    slug = models.SlugField(unique=True)       # highlighted
-    body = models.TextField()
-```
-````
-
-### Tabs
-
-Useful for showing multiple approaches side by side:
-
-```markdown
-=== "Python"
-    ​```python
-    print("hello")
-    ​```
-
-=== "JavaScript"
-    ​```javascript
-    console.log("hello")
-    ​```
-```
-
-### Mermaid diagrams
-
-````markdown
-```mermaid
-sequenceDiagram
-    participant UI
-    participant API
-    UI->>API: request
-    API-->>UI: response
-```
-````
-
-### Internal links
-
-Use relative paths to other markdown files:
-
-```markdown
-See [Pull Requests](../workflow/pull-requests.md) for details.
-```
-
-MkDocs rewrites these to the correct URLs at build time.
-
-### Task lists
-
-```markdown
-- [x] Done
-- [ ] To do
-```
-
----
-
-## Optional: add "last updated" dates to pages
-
-If you want each page to show when it was last modified:
-
-1. Add to `requirements.txt`:
-
-    ```
-    mkdocs-git-revision-date-localized-plugin
-    ```
-
-2. Uncomment the plugin in `mkdocs.yml`:
-
-    ```yaml
-    plugins:
-      - search
-      - git-revision-date-localized:
-          enable_creation_date: true
-    ```
-
-3. Commit, push. Done.
-
----
-
-## Privacy notes
-
-The **repo** is private. The **built site** is public (GitHub Pages on Free/Pro/Team is always public).
-
-This starter is configured so the public site contains **zero references to the repo**:
-
-- No GitHub icon in the top right
-- No "Edit this page" links
-- No repo name in the footer
-
-`repo_url` and `edit_uri` in `mkdocs.yml` are commented out. **Leave them commented** unless you want visitors to be able to click through to the repo.
-
----
-
-## Docs as code
-
-- Docs live alongside code conventions — changes go through the same PR process.
-- If you change a pattern or add a new one, update the relevant page **in the same PR**.
-- Treat stale docs as bugs. File an issue or open a PR.
-
----
-
-## Need help?
-
-- [MkDocs Material reference](https://squidfunk.github.io/mkdocs-material/reference/) — every feature, with examples
-- [Admonition types](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
-- [Code block features](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/)
+The light mode is still Material's default — white background, indigo accents. If you want it navy-tinted in light mode too, you can add variables under `[data-md-color-scheme="default"]` in `extra.css`.

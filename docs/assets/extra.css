@@ -1,0 +1,33 @@
+/* Dark navy blue theme overrides */
+
+[data-md-color-scheme="slate"] {
+  /* Main background - deep navy */
+  --md-default-bg-color: hsl(220, 40%, 10%);
+  --md-default-bg-color--light: hsl(220, 40%, 12%);
+  --md-default-bg-color--lighter: hsl(220, 40%, 15%);
+  --md-default-bg-color--lightest: hsl(220, 40%, 18%);
+
+  /* Slightly lighter navy for cards, code blocks, etc. */
+  --md-code-bg-color: hsl(220, 40%, 14%);
+  --md-code-hl-color: hsla(220, 50%, 40%, 0.3);
+
+  /* Header - slightly darker navy */
+  --md-primary-fg-color: hsl(220, 45%, 15%);
+  --md-primary-fg-color--light: hsl(220, 45%, 20%);
+  --md-primary-fg-color--dark: hsl(220, 50%, 10%);
+
+  /* Accent color - a lighter, brighter blue for links and highlights */
+  --md-accent-fg-color: hsl(210, 90%, 65%);
+  --md-accent-fg-color--transparent: hsla(210, 90%, 65%, 0.1);
+
+  /* Typography colors */
+  --md-typeset-color: hsl(220, 15%, 88%);
+  --md-typeset-a-color: hsl(210, 85%, 70%);
+}
+
+/* Make the logo stand out a bit on the dark navy header */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.5rem;
+  width: auto;
+}
