@@ -8,7 +8,6 @@ A map of the repo so you know where to look for things. For deeper detail on con
 your-repo/
 ├── Back-End/       # Django + DRF API
 ├── Front-End/      # React + TypeScript SPA
-├── docs/           # you are here
 └── ...
 ```
 
@@ -32,7 +31,7 @@ Back-End/
 **Where to look:**
 
 - URL routing: `CLRPLN/urls.py` includes each app's `urls.py`
-- Settings / env: `CLRPLN/settings.py`, `.env`
+- Settings / env: `CLRPLN/settings.py`, `CLRPLN/.env`
 - Business logic: inside each app, usually in `models.py` or a `services.py`
 
 See [Backend → Project Structure](../backend/project-structure.md) for conventions.

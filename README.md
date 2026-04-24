@@ -1,14 +1,13 @@
-# Engineering Handbook
+# Developer Handbook
 
 Team documentation — coding practices, workflows, and onboarding for new hires.
 
-**📖 Live site:** `https://YOUR-ORG.github.io/engineering-handbook/` *(update this after your first deploy)*
 
 ---
 
 ## About this repo
 
-This is the source for our team's engineering handbook. It's a living document covering:
+This is the source for our team's developer handbook. It's a living document covering:
 
 - Onboarding for new hires
 - Pull request and code review workflow

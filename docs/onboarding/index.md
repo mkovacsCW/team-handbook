@@ -4,7 +4,7 @@ Welcome to the team! This section is designed to get you productive quickly with
 
 ## Your first week
 
-1. **[Day One](day-one.md)** — accounts, environment setup, and your first PR.
+1. **[Week One](week-one.md)** — accounts, environment setup, and your first PR.
 2. **[Codebase Tour](codebase-tour.md)** — what lives where and why.
 3. **[Glossary](glossary.md)** — decoding our internal jargon (WIP, CLRPLN, Locate, etc.).
 
@@ -13,14 +13,12 @@ Welcome to the team! This section is designed to get you productive quickly with
 !!! tip "Don't try to read everything"
     The reference docs (Backend, Frontend) are for **looking things up**, not for reading front to back. Skim the quick-reference tables on each section's landing page, then come back when you hit something specific.
 
-**Day 1–2 (read these):**
 
-- [Day One](day-one.md)
-- [General Principles](../general-principles.md)
+- [Week One](week-one.md)
+- [General Principles](../workflow/general-principles.md)
 - [Pull Requests](../workflow/pull-requests.md)
 - [Systems Development](../workflow/systems-development.md) — how a feature goes from idea to production
 
-**Day 3–5 (skim these, bookmark for reference):**
 
 - [Backend overview](../backend/index.md) — skim the quick-reference table
 - [Frontend overview](../frontend/index.md) — skim the quick-reference table

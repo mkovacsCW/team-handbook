@@ -39,7 +39,7 @@ For any feature with a UI component, build a prototype **before** writing the ba
 **Build a static prototype first.** Hard-code the data, skip the API integration, and get the UI looking roughly right. This can be a React component with dummy data, or even just a Figma-style mockup in code. The goal is to answer the question: "Is this actually what we want?" before spending time on backend plumbing.
 
 !!! tip "Get eyes on it early"
-    Share the prototype in Slack or in a draft PR and ask for feedback **before** wiring up the backend. It is dramatically cheaper to move a button than to refactor three API endpoints because the UI changed shape.
+    Share the prototype in teams, or in a draft PR and ask for feedback **before** wiring up the backend. It is dramatically cheaper to move a button than to refactor three API endpoints because the UI changed shape.
 
 **Match the styling of the most recently deployed feature.** Consistency matters more than cleverness. When starting a new UI, open the most recently merged feature and model yours after it — same spacing, same component patterns, same color choices. This keeps the product feeling coherent instead of like a patchwork.
 
@@ -137,7 +137,7 @@ Once the feature is working end-to-end and you're happy with it, convert the dra
 - What this adds and why
 - Any unusual decisions or trade-offs
 - How to test it locally (setup steps, which URL to visit, which user to log in as)
-- Screenshots or a short screen recording of the UI
+- Screenshots or a short screen recording of the UI if required
 - Link to the ticket/issue
 
 **Tag the right reviewers.** One or two people, ideally including someone who knows the area well. Don't tag the whole team.
@@ -175,7 +175,7 @@ Here's roughly how building a feature like "Locate management" would go, to make
 |-------|--------------------------------------------------------------------------------|
 | 1     | **Ticket filed:** Users need to request underground utility locates.           |
 | 2     | **Design doc:** Locate has a job, location, expiration, and status lifecycle. Data model sketched in the issue. |
-| 3     | **UI prototype:** List view + detail view + create form, all with hardcoded data. Shared in Slack. |
+| 3     | **UI prototype:** List view + detail view + create form, all with hardcoded data. |
 | 4     | **Team review:** Someone points out the status badges don't match the existing work orders page. Adjust. |
 | 5     | **Model + migration:** Written, reviewed, committed. |
 | 6     | **Serializers:** Three of them — `LocateListSerializer`, `LocateDetailSerializer`, `LocateCreateSerializer`. |
@@ -196,4 +196,4 @@ Each phase should feel like it builds on the previous one. If you're stuck on st
 - [Pull Requests](pull-requests.md) — how to write and review PRs
 - [Support Email Process](support-email.md) — how we handle the shared inbox
 - [CI/CD](ci-cd.md) — planned automation (not yet built)
-- [General Principles](../general-principles.md) — language-agnostic practices
+- [General Principles](general-principles.md) — language-agnostic practices

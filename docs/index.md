@@ -1,4 +1,4 @@
-# Engineering Handbook
+# Developer Handbook
 
 Welcome! This is the team's living reference for how we write code, ship features, and work together.
 
@@ -40,15 +40,14 @@ Start with the **[Onboarding](onboarding/index.md)** section — it'll walk you 
 
     Language-agnostic practices we apply everywhere.
 
-    [:octicons-arrow-right-24: Principles](general-principles.md)
+    [:octicons-arrow-right-24: Principles](workflow/general-principles.md)
 
 </div>
 
 ## How to use these docs
 
 - **Use the search bar** (top right, or press <kbd>/</kbd>) — it indexes everything and usually beats clicking around.
-- **Each section has a landing page** with a quick-reference table at the top. Skim those first.
-- **Docs live in the same repo as code.** If you spot something wrong or missing, open a PR — no doc is sacred.
+- **Each section has a landing page** with a quick-reference table at the top. Skim those first./sn[]
 
 !!! tip "Keyboard shortcuts"
     Press <kbd>/</kbd> or <kbd>s</kbd> to focus search. <kbd>n</kbd> / <kbd>p</kbd> to jump to next / previous page.

@@ -1,16 +1,16 @@
 # Workflow
-
+ 
 How we ship code as a team, handle support, and (eventually) deploy.
-
+ 
 ## Pages in this section
-
+ 
+- **[General Principles](general-principles.md)** — language-agnostic practices we apply across the whole codebase.
 - **[Systems Development](systems-development.md)** — how we build features start to finish, from design through deploy.
 - **[Pull Requests](pull-requests.md)** — how we size, write, review, and merge PRs.
 - **[Support Email Process](support-email.md)** — how we handle the shared inbox.
 - **[CI/CD](ci-cd.md)** — planned automation (not yet built).
-
 ## Quick reference
-
+ 
 | Situation                       | What to do                                                  |
 |---------------------------------|-------------------------------------------------------------|
 | Starting a new feature          | Read [Systems Development](systems-development.md). Sketch the data model before writing code. |
@@ -21,3 +21,4 @@ How we ship code as a team, handle support, and (eventually) deploy.
 | When to merge                   | Author merges after approvals + green CI. Squash merge. Delete branch. |
 | Stale PR                        | If no activity after a few days, follow up or close.        |
 | Support email you can't reply to | Leave it unread OR flag/star it. Never read-and-ignore.    |
+ 

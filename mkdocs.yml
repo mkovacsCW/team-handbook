@@ -1,4 +1,4 @@
-site_name: Engineering Handbook
+site_name: Developer Handbook
 site_description: Coding practices, workflows, and onboarding for the team.
 site_url: https://docs.example.com/
 # repo_url: ...   # LEAVE COMMENTED to keep the site from linking to your repo
@@ -90,16 +90,16 @@ nav:
   - Home: index.md
   - Onboarding:
       - onboarding/index.md
-      - Day One: onboarding/day-one.md
+      - Week One: onboarding/week-one.md
       - Codebase Tour: onboarding/codebase-tour.md
       - Glossary: onboarding/glossary.md
   - Workflow:
       - workflow/index.md
+      - General Principles: workflow/general-principles.md
       - Systems Development: workflow/systems-development.md
       - Pull Requests: workflow/pull-requests.md
       - Support Email Process: workflow/support-email.md
       - CI/CD: workflow/ci-cd.md
-  - General Principles: general-principles.md
   - Backend:
       - backend/index.md
       - Project Structure: backend/project-structure.md

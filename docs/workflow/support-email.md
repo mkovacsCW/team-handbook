@@ -15,15 +15,15 @@ The support inbox is everyone's responsibility. A message that sits unanswered r
 - **Leave it marked as unread** — the simplest signal that no one has picked this up yet
 - **Star or flag it** — depending on your email client, this signals "I saw it but can't take it right now"
 
-**Never just read-and-ignore.** That's the worst of both worlds: the email looks handled (because it's marked read), but no one has actually responded. Someone will eventually notice the customer was ghosted, and it's a bad look.
+**Never just read-and-ignore.** That's the worst of both worlds: the email looks handled (because it's marked read), but no one has actually responded. Someone will eventually notice the client was ghosted, and it's a bad look.
 
 ## Who responds
 
 **Whoever can respond fastest, should.** We don't have a rigid assignment system. If you see a message and you know the answer, go for it.
 
-**If the question needs someone specific**, reply anyway with an acknowledgment ("Hi X — I'm looping in Y who knows this area better, they'll follow up shortly") and then flag it to them in Slack. Don't leave the customer wondering if anyone saw their email.
+**If the question needs someone specific**, reply anyway with an acknowledgment ("Hi X — I'm looping in Y who knows this area better, they'll follow up shortly") and then flag it to them in Teams, in-person or via email. Don't leave the client wondering if anyone saw their email.
 
-**If no one responds within a few hours**, ping the team channel. Something like "Anyone in the support inbox today? There's a message from X that needs eyes."
+**If no one responds within a few hours**, ping the Teams channel. Something like "Anyone in the support inbox today? There's a message from X that needs eyes."
 
 ## What to include in a response
 
@@ -33,13 +33,13 @@ The support inbox is everyone's responsibility. A message that sits unanswered r
 
 ## Handling tricky messages
 
-**Angry customers.** Acknowledge the frustration, don't match the tone. A calm, helpful reply almost always de-escalates. If it doesn't, loop in a manager.
+**Angry clients.** Acknowledge the frustration, don't match the tone. A calm, helpful reply almost always de-escalates. If it doesn't, loop in a manager.
 
-**Bug reports.** File an issue in the tracker with the customer's details attached, reply with "I've filed this as a bug and our team is investigating, I'll follow up with updates." Then actually follow up.
+**Bug reports.** File an issue in GitHub with the client's details attached, reply with "I've filed this as a bug and our team is investigating, I'll follow up with updates." Then actually follow up.
 
 **Feature requests.** Thank them for the suggestion, but don't promise anything. "We track all feature requests and will consider this for future releases" is honest and safe.
 
-**Things that look like scams or spam.** If you're uncertain, ask in Slack before responding. When in doubt, don't click links and don't reply.
+**Things that look like scams or spam.** If you're uncertain, ask in-person or on teams before responding. When in doubt, don't click links and don't reply.
 
 ## Rotation (optional)
 

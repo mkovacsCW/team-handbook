@@ -35,18 +35,23 @@ A guide for how our team writes, reviews, and merges pull requests.
 
 ## Screenshots & Visuals
 
-!!! tip "UI changes need visuals"
-    For any UI change, include before/after screenshots or a short screen recording. This makes review dramatically faster and catches visual regressions early.
+!!! tip "UI Change Visuals (Optional)"
+    For any UI change, including before/after screenshots or a short screen recording can help the review process. This makes review dramatically faster and catches visual regressions early.
+    
 
 ## Requesting Review
 
-- **Tag the right people.** Use code owners where possible, and tag domain experts for areas you're less familiar with.
+!!! danger " Always rebase your branch before requesting review"
+    Please rebase your branch AND verify everything works with zero conflicts before requesting a review.
+
+- **Tag the right people.** Tag Logan and Marton. If only a single reviewer is required (e.g. only Logan is dealing with the feature's deployment), the required reviewer will decide whether a review is required from the other.
+
 - **Don't tag the entire team.** One or two reviewers is usually enough.
 - **Respect people's time.** If your PR is large or complex, give reviewers a heads up or walk them through it.
 
 ## Reviewing PRs
 
-**Review within one business day.** Timely reviews keep the team moving. If you can't review in time, let the author know.
+**Review within one business week.** Timely reviews keep the team moving. If you can't review in time, let the author know or hand off the review to another team member.
 
 **Be clear about severity.** Prefix comments to signal intent:
 
@@ -68,7 +73,7 @@ A guide for how our team writes, reviews, and merges pull requests.
 
 ## Merging
 
-- **The author merges** after receiving the required approvals and CI is green.
+- **The reviewer merges** after submitting the required approvals and CI is green.
 - **Squash merge** into `main` to keep history clean (unless the team has agreed on a different strategy).
 - **Delete the branch after merging.** Keep the repo tidy.
 

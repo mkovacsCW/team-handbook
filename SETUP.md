@@ -115,7 +115,7 @@ Edit them, commit, push. Auto-deploys in ~1 min.
 
 Your URL: `https://YOUR-ORG.github.io/engineering-handbook/`
 
-Drop it in Slack, pin it in your onboarding channel, put it in your welcome email to new hires.
+Drop it in teams, pin it in your onboarding channel, put it in your welcome email to new hires.
 
 ---
 
