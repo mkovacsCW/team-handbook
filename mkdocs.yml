@@ -1,0 +1,111 @@
+site_name: Engineering Handbook
+site_description: Coding practices, workflows, and onboarding for the team.
+site_url: https://docs.example.com/
+# repo_url: ...   # LEAVE COMMENTED to keep the site from linking to your repo
+# edit_uri: ...   # LEAVE COMMENTED to hide "Edit this page" links
+
+theme:
+  name: material
+  features:
+    - navigation.tabs          # top-level sections as tabs
+    - navigation.sections      # group items in the sidebar
+    - navigation.expand        # expand sidebar by default
+    - navigation.top           # "back to top" button
+    - navigation.footer        # prev/next page links at bottom
+    - navigation.indexes       # section landing pages
+    - search.suggest           # autocomplete in search
+    - search.highlight         # highlight search terms on page
+    - content.code.copy        # copy button on code blocks
+    - content.code.annotate    # clickable annotations in code
+    - content.tabs.link        # syncs tabs across the page
+    - toc.follow               # right-side TOC scrolls with you
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  # Callouts / admonitions (!!! note, !!! warning, etc.)
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # Code blocks with syntax highlighting + line numbers
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  # Tabs, task lists, emoji, etc.
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true           # anchor link icon on headings
+
+plugins:
+  - search
+  # - git-revision-date-localized:   # uncomment for "last updated" dates
+  #     enable_creation_date: true
+
+# Navigation — this controls the sidebar structure.
+# Files not listed here still get built but won't show in the nav.
+nav:
+  - Home: index.md
+  - Onboarding:
+      - onboarding/index.md
+      - Day One: onboarding/day-one.md
+      - Codebase Tour: onboarding/codebase-tour.md
+      - Glossary: onboarding/glossary.md
+  - Workflow:
+      - workflow/index.md
+      - Pull Requests: workflow/pull-requests.md
+  - General Principles: general-principles.md
+  - Backend:
+      - backend/index.md
+      - Project Structure: backend/project-structure.md
+      - Models: backend/models.md
+      - Serializers: backend/serializers.md
+      - Views: backend/views.md
+      - URLs: backend/urls.md
+  - Frontend:
+      - frontend/index.md
+      - Project Structure: frontend/project-structure.md
+      - Components: frontend/components.md
+      - Hooks: frontend/hooks.md
+      - API Files: frontend/api.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org
