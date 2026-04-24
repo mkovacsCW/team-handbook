@@ -38,8 +38,11 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-  # Note: font settings handled in extra.css to use system monospace stack
-  # (same as terminal.css) — no Google Fonts required.
+  # Fonts loaded from Google Fonts by Material
+  # Inter = body text, JetBrains Mono = code
+  font:
+    text: Inter
+    code: JetBrains Mono
   icon:
     repo: fontawesome/brands/github
 

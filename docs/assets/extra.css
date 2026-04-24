@@ -1,13 +1,6 @@
-/* ===== FONTS ===== */
-/* Same monospace stack as the terminal.css theme — system fonts, no web font loading. */
-
-:root {
-  --md-text-font: "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-  --md-code-font: "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-}
-
-/* ===== HEADER (applies to BOTH light and dark modes) ===== */
-/* Dark navy header that stays consistent across themes. */
+/* ============================================================
+   HEADER — Dark navy, consistent across light and dark modes
+   ============================================================ */
 
 .md-header,
 .md-tabs {
@@ -15,7 +8,6 @@
   color: hsl(0, 0%, 100%);
 }
 
-/* Keep all header text and icons white regardless of color scheme */
 .md-header__title,
 .md-header__topic,
 .md-header__button,
@@ -25,13 +17,11 @@
   color: hsl(0, 0%, 100%);
 }
 
-/* Active tab needs a lighter accent so it pops on the navy */
 .md-tabs__link--active {
   color: hsl(210, 100%, 85%);
   font-weight: 600;
 }
 
-/* Search input on the navy header */
 .md-search__input::placeholder {
   color: hsla(0, 0%, 100%, 0.7);
 }
@@ -42,38 +32,88 @@
   background-color: hsla(0, 0%, 100%, 0.15);
 }
 
-/* ===== DARK MODE (slate) — deep navy throughout ===== */
+/* ============================================================
+   DARK MODE — Deep navy background throughout
+   ============================================================ */
 
 [data-md-color-scheme="slate"] {
-  /* Main background — deep navy */
+  /* Page background */
   --md-default-bg-color: hsl(220, 40%, 10%);
   --md-default-bg-color--light: hsl(220, 40%, 12%);
   --md-default-bg-color--lighter: hsl(220, 40%, 15%);
   --md-default-bg-color--lightest: hsl(220, 40%, 18%);
 
-  /* Code blocks / cards — slightly lighter than page bg */
-  --md-code-bg-color: hsl(220, 40%, 14%);
-  --md-code-hl-color: hsla(220, 50%, 40%, 0.3);
+  /* Code block background — noticeably darker than page bg so code stands out */
+  --md-code-bg-color: hsl(220, 50%, 5%);
+  --md-code-fg-color: hsl(220, 15%, 88%);
+  --md-code-hl-color: hsla(210, 90%, 60%, 0.15);
 
-  /* Primary (referenced by anything that uses --md-primary-fg-color outside header) */
+  /* Primary color (used in a few non-header places) */
   --md-primary-fg-color: hsl(220, 45%, 15%);
   --md-primary-fg-color--light: hsl(220, 45%, 20%);
   --md-primary-fg-color--dark: hsl(220, 50%, 10%);
 
-  /* Accent — lighter blue for links and highlights */
+  /* Accent — lighter blue for links */
   --md-accent-fg-color: hsl(210, 90%, 65%);
   --md-accent-fg-color--transparent: hsla(210, 90%, 65%, 0.1);
 
   /* Typography */
   --md-typeset-color: hsl(220, 15%, 88%);
   --md-typeset-a-color: hsl(210, 85%, 70%);
+
+  /* ===== DARK MODE CODE SYNTAX COLORS ===== */
+  /* Pygments token colors — tuned for dark navy background */
+  --md-code-hl-number-color: hsl(15, 80%, 70%);      /* numbers — soft orange */
+  --md-code-hl-special-color: hsl(340, 80%, 75%);    /* special — pink */
+  --md-code-hl-function-color: hsl(280, 75%, 75%);   /* functions — purple */
+  --md-code-hl-constant-color: hsl(200, 90%, 70%);   /* constants — cyan */
+  --md-code-hl-keyword-color: hsl(220, 90%, 75%);    /* keywords — blue */
+  --md-code-hl-string-color: hsl(140, 55%, 70%);     /* strings — green */
+  --md-code-hl-name-color: hsl(220, 15%, 88%);       /* names — default text */
+  --md-code-hl-operator-color: hsl(220, 15%, 70%);   /* operators — muted */
+  --md-code-hl-punctuation-color: hsl(220, 15%, 70%);/* punctuation — muted */
+  --md-code-hl-comment-color: hsl(220, 15%, 55%);    /* comments — muted gray */
+  --md-code-hl-generic-color: hsl(220, 15%, 80%);
+  --md-code-hl-variable-color: hsl(220, 15%, 88%);
 }
 
-/* ===== LIGHT MODE — white body, navy header (handled above) ===== */
-/* Material's defaults give us white bg + dark text.
-   The .md-header override at the top of this file keeps the navy bar. */
+/* Inline code in dark mode — slight tint so it stands out from body */
+[data-md-color-scheme="slate"] .md-typeset code {
+  background-color: hsla(220, 45%, 25%, 0.5);
+  color: hsl(210, 100%, 85%);
+}
 
-/* ===== LOGO ===== */
+/* But inside a pre block (fenced code), no tint — use code-bg-color */
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  background-color: transparent;
+  color: var(--md-code-fg-color);
+}
+
+/* Force fenced code blocks to use our dark code background.
+   Material's default leaves them transparent which shows the page bg. */
+[data-md-color-scheme="slate"] .md-typeset .highlight {
+  background-color: var(--md-code-bg-color);
+  border-radius: 0.2rem;
+  border: 1px solid hsl(220, 35%, 20%);
+}
+[data-md-color-scheme="slate"] .md-typeset .highlight pre {
+  background-color: transparent;
+}
+[data-md-color-scheme="slate"] .md-typeset .highlight .filename {
+  background-color: hsl(220, 45%, 14%);
+  border-bottom: 1px solid hsl(220, 35%, 20%);
+  color: hsl(220, 15%, 88%);
+}
+
+/* ============================================================
+   LIGHT MODE — Keep Material's defaults, white body + navy header
+   ============================================================ */
+/* Nothing needed here — Material's default light theme already works,
+   and the header override at the top keeps the navy bar. */
+
+/* ============================================================
+   LOGO
+   ============================================================ */
 
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
