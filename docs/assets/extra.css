@@ -120,3 +120,74 @@
   height: 1.5rem;
   width: auto;
 }
+
+/* ============================================================
+   ANIMATIONS & TRANSITIONS
+   ============================================================ */
+
+/* 1. Smooth scrolling for in-page anchor links (TOC, headings, etc).
+      Respects users with 'reduce motion' OS settings. */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 2. Gentle fade-in on page content. ~200ms, subtle. */
+@keyframes md-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.md-content__inner {
+  animation: md-fade-in 200ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-content__inner {
+    animation: none;
+  }
+}
+
+/* 3. Smoother hover transitions on links, nav items, and cards.
+      Material has basic transitions — we're making them consistent and slightly smoother. */
+
+/* Links in body content */
+.md-typeset a {
+  transition: color 150ms ease-in-out;
+}
+
+/* Nav items (sidebar + top tabs) */
+.md-nav__link,
+.md-tabs__link {
+  transition: color 150ms ease-in-out, opacity 150ms ease-in-out;
+}
+
+/* Cards on the homepage grid */
+.md-typeset .grid.cards > :is(ul, ol) > li,
+.md-typeset .grid > .card {
+  transition:
+    border-color 200ms ease-in-out,
+    box-shadow 200ms ease-in-out,
+    transform 200ms ease-in-out;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li:hover,
+.md-typeset .grid > .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px hsla(220, 40%, 10%, 0.1);
+}
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > :is(ul, ol) > li:hover,
+[data-md-color-scheme="slate"] .md-typeset .grid > .card:hover {
+  box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.4);
+  border-color: hsl(210, 90%, 65%);
+}
+
+/* 4. Copy button on code blocks — already enabled via mkdocs.yml
+      (features: content.code.copy). Material handles the animation. */
