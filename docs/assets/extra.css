@@ -1,31 +1,80 @@
-/* Dark navy blue theme overrides */
+/* ===== FONTS ===== */
+/* Same monospace stack as the terminal.css theme — system fonts, no web font loading. */
+
+:root {
+  --md-text-font: "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+  --md-code-font: "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+}
+
+/* ===== HEADER (applies to BOTH light and dark modes) ===== */
+/* Dark navy header that stays consistent across themes. */
+
+.md-header,
+.md-tabs {
+  background-color: hsl(220, 45%, 15%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* Keep all header text and icons white regardless of color scheme */
+.md-header__title,
+.md-header__topic,
+.md-header__button,
+.md-tabs__link,
+.md-search__input,
+.md-search__icon {
+  color: hsl(0, 0%, 100%);
+}
+
+/* Active tab needs a lighter accent so it pops on the navy */
+.md-tabs__link--active {
+  color: hsl(210, 100%, 85%);
+  font-weight: 600;
+}
+
+/* Search input on the navy header */
+.md-search__input::placeholder {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+.md-search__input {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.md-search__input:hover {
+  background-color: hsla(0, 0%, 100%, 0.15);
+}
+
+/* ===== DARK MODE (slate) — deep navy throughout ===== */
 
 [data-md-color-scheme="slate"] {
-  /* Main background - deep navy */
+  /* Main background — deep navy */
   --md-default-bg-color: hsl(220, 40%, 10%);
   --md-default-bg-color--light: hsl(220, 40%, 12%);
   --md-default-bg-color--lighter: hsl(220, 40%, 15%);
   --md-default-bg-color--lightest: hsl(220, 40%, 18%);
 
-  /* Slightly lighter navy for cards, code blocks, etc. */
+  /* Code blocks / cards — slightly lighter than page bg */
   --md-code-bg-color: hsl(220, 40%, 14%);
   --md-code-hl-color: hsla(220, 50%, 40%, 0.3);
 
-  /* Header - slightly darker navy */
+  /* Primary (referenced by anything that uses --md-primary-fg-color outside header) */
   --md-primary-fg-color: hsl(220, 45%, 15%);
   --md-primary-fg-color--light: hsl(220, 45%, 20%);
   --md-primary-fg-color--dark: hsl(220, 50%, 10%);
 
-  /* Accent color - a lighter, brighter blue for links and highlights */
+  /* Accent — lighter blue for links and highlights */
   --md-accent-fg-color: hsl(210, 90%, 65%);
   --md-accent-fg-color--transparent: hsla(210, 90%, 65%, 0.1);
 
-  /* Typography colors */
+  /* Typography */
   --md-typeset-color: hsl(220, 15%, 88%);
   --md-typeset-a-color: hsl(210, 85%, 70%);
 }
 
-/* Make the logo stand out a bit on the dark navy header */
+/* ===== LIGHT MODE — white body, navy header (handled above) ===== */
+/* Material's defaults give us white bg + dark text.
+   The .md-header override at the top of this file keeps the navy bar. */
+
+/* ===== LOGO ===== */
+
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
   height: 1.5rem;

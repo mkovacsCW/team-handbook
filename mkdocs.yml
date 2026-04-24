@@ -22,15 +22,7 @@ theme:
     - content.tabs.link        # syncs tabs across the page
     - toc.follow               # right-side TOC scrolls with you
   palette:
-    # Dark mode (default — dark navy)
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: blue
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-    # Light mode
+    # Light mode (default)
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
@@ -38,9 +30,16 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-  font:
-    text: Inter
-    code: JetBrains Mono
+    # Dark mode (dark navy)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  # Note: font settings handled in extra.css to use system monospace stack
+  # (same as terminal.css) — no Google Fonts required.
   icon:
     repo: fontawesome/brands/github
 
