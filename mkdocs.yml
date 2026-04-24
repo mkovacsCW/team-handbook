@@ -9,6 +9,8 @@ theme:
   logo: assets/logo.png
   favicon: assets/logo.png
   features:
+    - navigation.instant       # page navigation without full reload (enables transitions)
+    - navigation.instant.progress  # subtle progress bar for slow pages
     - navigation.tabs          # top-level sections as tabs
     - navigation.sections      # group items in the sidebar
     - navigation.expand        # expand sidebar by default

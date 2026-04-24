@@ -1,3 +1,8 @@
+/* Load Inter weight 500 (Material's default only loads 300/400/700).
+   We want 500 for headings without needing 700 anywhere. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
+
 /* ============================================================
    HEADER — Dark navy, consistent across light and dark modes
    ============================================================ */
@@ -112,6 +117,53 @@
    and the header override at the top keeps the navy bar. */
 
 /* ============================================================
+   TYPOGRAPHY — Cap font weights at 500 (no extreme bolds)
+   ============================================================ */
+/* Default body = 400, headings = 500, emphasis = 500. Max 500 anywhere. */
+
+.md-typeset {
+  font-weight: 400;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 500;
+}
+
+/* Bold / strong — clamp to 500 instead of the default 700 */
+.md-typeset strong,
+.md-typeset b,
+.md-typeset th {
+  font-weight: 500;
+}
+
+/* Header title + active nav items — use 500 instead of 600/700 */
+.md-header__title,
+.md-tabs__link--active,
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link,
+.md-nav__title {
+  font-weight: 500;
+}
+
+/* Non-active nav items stay light at 300 for hierarchy */
+.md-nav__link,
+.md-tabs__link {
+  font-weight: 300;
+}
+
+/* Body text regular weight */
+.md-tabs__link,
+.md-typeset p,
+.md-typeset li {
+  font-weight: 400;
+}
+
+/* ============================================================
    LOGO
    ============================================================ */
 
@@ -136,11 +188,13 @@ html {
   }
 }
 
-/* 2. Gentle fade-in on page content. ~200ms, subtle. */
+/* 2. Gentle fade-in on page content.
+      Also triggers on every page navigation when navigation.instant is enabled,
+      so it doubles as a page-transition animation. ~250ms, subtle. */
 @keyframes md-fade-in {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -148,7 +202,7 @@ html {
   }
 }
 .md-content__inner {
-  animation: md-fade-in 200ms ease-out;
+  animation: md-fade-in 250ms ease-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .md-content__inner {
@@ -156,21 +210,17 @@ html {
   }
 }
 
-/* 3. Smoother hover transitions on links, nav items, and cards.
-      Material has basic transitions — we're making them consistent and slightly smoother. */
+/* 3. Smoother hover transitions on links, nav items, and cards. */
 
-/* Links in body content */
 .md-typeset a {
   transition: color 150ms ease-in-out;
 }
 
-/* Nav items (sidebar + top tabs) */
 .md-nav__link,
 .md-tabs__link {
   transition: color 150ms ease-in-out, opacity 150ms ease-in-out;
 }
 
-/* Cards on the homepage grid */
 .md-typeset .grid.cards > :is(ul, ol) > li,
 .md-typeset .grid > .card {
   transition:
@@ -189,5 +239,14 @@ html {
   border-color: hsl(210, 90%, 65%);
 }
 
-/* 4. Copy button on code blocks — already enabled via mkdocs.yml
-      (features: content.code.copy). Material handles the animation. */
+/* 4. Copy button on code blocks — green success toast.
+      Material 9+ shows a toast dialog "Copied to clipboard" after a successful copy.
+      The default is black — we override to green. */
+
+.md-dialog {
+  background-color: hsl(140, 55%, 40%);
+}
+.md-dialog .md-dialog__inner {
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+}
