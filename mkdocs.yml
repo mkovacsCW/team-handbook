@@ -7,7 +7,7 @@ site_url: https://docs.example.com/
 theme:
   name: material
   logo: assets/logo.png
-  favicon: assets/logo.png
+  favicon: assets/favicon.png
   features:
     - navigation.instant       # page navigation without full reload (enables transitions)
     - navigation.instant.progress  # subtle progress bar for slow pages
