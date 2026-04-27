@@ -25,22 +25,19 @@ theme:
     - toc.follow               # right-side TOC scrolls with you
   palette:
     # Light mode (default)
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-    # Dark mode (dark navy)
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    # Dark mode (only if user toggles)
+    - scheme: slate
       primary: indigo
       accent: blue
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
-  # Fonts loaded from Google Fonts by Material
+        name: Switch to light modeMaterial
   # Inter = body text, JetBrains Mono = code
   font:
     text: Inter
