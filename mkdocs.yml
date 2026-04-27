@@ -7,7 +7,7 @@ site_url: https://docs.example.com/
 theme:
   name: material
   logo: assets/logo.png
-  favicon: assets/favicon.png
+  favicon: assets/logo.png
   features:
     - navigation.instant       # page navigation without full reload (enables transitions)
     - navigation.instant.progress  # subtle progress bar for slow pages
@@ -101,9 +101,15 @@ nav:
       - backend/index.md
       - Project Structure: backend/project-structure.md
       - Models: backend/models.md
+      - Querysets & Managers: backend/querysets-managers.md
       - Serializers: backend/serializers.md
       - Views: backend/views.md
       - URLs: backend/urls.md
+      - Services: backend/services.md
+      - Utils: backend/utils.md
+      - Exceptions & Error Handling: backend/exceptions.md
+      - Emails: backend/emails.md
+      - Management Commands: backend/management-commands.md
   - Frontend:
       - frontend/index.md
       - Project Structure: frontend/project-structure.md
