@@ -7,7 +7,7 @@ site_url: https://docs.example.com/
 theme:
   name: material
   logo: assets/logo.png
-  favicon: assets/logo.png
+  favicon: assets/favicon.png
   features:
     - navigation.instant       # page navigation without full reload (enables transitions)
     - navigation.instant.progress  # subtle progress bar for slow pages
@@ -113,6 +113,9 @@ nav:
       - Components: frontend/components.md
       - Hooks: frontend/hooks.md
       - API Files: frontend/api.md
+      - Alerts: frontend/alerts.md
+      - Toasts: frontend/toasts.md
+      - Smooth Scrolling: frontend/smooth-scroll.md
 
 extra_css:
   - assets/extra.css

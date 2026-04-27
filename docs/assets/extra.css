@@ -7,10 +7,37 @@
    HEADER — Dark navy, consistent across light and dark modes
    ============================================================ */
 
-.md-header,
+:root {
+  --nav-primary-bg: #164661;
+  --nav-secondary-bg: #0e1f2c;
+  --nav-lighter-bg: #002a45;
+}
+
+.md-header {
+  background: linear-gradient(135deg,
+      var(--nav-primary-bg) 0%,
+      var(--nav-lighter-bg) 15%,
+      var(--nav-secondary-bg) 50%,
+      var(--nav-lighter-bg) 100%);
+  background-size: 100% 200%;
+  /* gradient is twice as tall as the header */
+  background-position: 0 0;
+  /* show the top half */
+  color: #ffffff;
+}
+
+
+
 .md-tabs {
-  background-color: hsl(220, 45%, 15%);
-  color: hsl(0, 0%, 100%);
+  background: linear-gradient(135deg,
+      var(--nav-primary-bg) 0%,
+      var(--nav-lighter-bg) 15%,
+      var(--nav-secondary-bg) 50%,
+      var(--nav-lighter-bg) 100%);
+  background-size: 100% 200%;
+  background-position: 0 100%;
+  /* show the bottom half */
+  color: #ffffff;
 }
 
 .md-header__title,
@@ -20,6 +47,11 @@
 .md-search__input,
 .md-search__icon {
   color: hsl(0, 0%, 100%);
+}
+
+.md-search__form,
+.md-search__input {
+  border-radius: 1rem;
 }
 
 .md-tabs__link--active {
@@ -291,5 +323,15 @@ html {
 
 .md-dialog .md-dialog__inner {
   color: hsl(0, 0%, 100%);
+  font-weight: 400;
+}
+
+/* Site name shown when scrolled to top */
+.md-header__topic:first-child {
+  font-weight: 400;
+}
+
+/* Current page name shown when scrolled down */
+.md-header__topic[data-md-component="header-topic"] {
   font-weight: 400;
 }
