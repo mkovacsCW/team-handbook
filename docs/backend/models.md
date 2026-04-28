@@ -203,7 +203,7 @@ class Article(models.Model):
                 name='unique_author_slug',
             ),
             models.CheckConstraint(
-                check=models.Q(word_count__gte=0),
+                condition=models.Q(word_count__gte=0),
                 name='positive_word_count',
             ),
         ]
